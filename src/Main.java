@@ -53,7 +53,7 @@ public final class Main extends Thread {
             }
         }
         /* Print out all subsequences with 5 or more abnormal occurences, also it's a one line lambda-function */
-        infectedImmuneRepertoires.get().get(0).forEach((key, value) -> {if(healthyImmuneRepertoires.get().get(0).containsKey(key)) {if(value.getOccurences() - healthyImmuneRepertoires.get().get(0).get(key).getOccurences() >= 5) {System.out.println("Subsequence: " + key + ", infected: " + value.getOccurences() + ", healthy: " + healthyImmuneRepertoires.get().get(0).get(key).getOccurences() + ", difference: " + (value.getOccurences() - healthyImmuneRepertoires.get().get(0).get(key).getOccurences()));}}});
+        infectedImmuneRepertoires.get().get(0).forEach((key, value) -> {if(healthyImmuneRepertoires.get().get(0).containsKey(key)) {if(value.getOccurences() - healthyImmuneRepertoires.get().get(0).get(key).getOccurences() >= 5) {System.out.println("Subsequence: " + key + ", infected: " + value.getOccurences() + ", healthy: " + healthyImmuneRepertoires.get().get(0).get(key).getOccurences() + ", difference: " + (value.getOccurences() - healthyImmuneRepertoires.get().get(0).get(key).getOccurences()));}} else if(value.getOccurences() >= 5) {System.out.println("Subsequence: " + key + ", infected: " + value.getOccurences() + ", healthy: " + 0 + ", difference: " + value.getOccurences());}});
     }
 
     /* Will read immune-repertoires from filePath and returns a hashmap of its sub-sequences */
